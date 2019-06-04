@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>Seismes</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-1"> </div>
+      <div class="col-lg-2">
+          <div class="shadow card bg-light">
+            <div class="card-header">
+              <h3><i class="fas fa-envelope"></i> Paramètres :</h3>
+            </div>
+            <div class="card-body">
+              <div id ="eqForm">
+                  <form>
+          
+                    <label for="minMag">Magnétude min :</label>
+                    <br />
+                    <input type="text"  class="form-control" id="minM" name="minMag" />
+                    <br />
+                    <br />
+          
+                    <label for="maxMag">Magnétude max :</label>
+                    <br />
+                    <input type="text" class="form-control" id="maxM" name="maxMag" />
+                    <br />
+                    <br />
+          
+                    <label for="minDate">Date min :</label>
+                    <br />
+                    <input type="date" class="form-control" id="minD" name="minDate" />
+                    <br />
+                    <br />
+          
+                    <label for="maxDate">Date max :</label>
+                    <br />
+                    <input type="date"  class="form-control" id="maxD" name="maxDate" />
+                    <br />
+                    <br />
+          
+                    <label for="nbMax">Nombre max de séismes :</label>
+                    <br />
+                    <input type="number" class="form-control" id="nbM" name="nbMax" />
+                    <br />
+                    <br />
+          
+                    <button type="button" class="btn btn-primary btn-block" src="earthquakeMap.js" onclick= "initEqMap()">Recherche</button>
+                    <br />
+                    <br />
+                  </form>
+              </div>
+            </div>
+          </div>
+      </div>
+      <div id="country"></div>
+        <div class="col-lg-8" style="color:white; margin-bottom: 50px">
+              <div class="shadow card bg-light">
+                <div class="form-body">  
+                  <div id="map" class="z-depth-1-half map-container"></div> 
+                </div>
+              </div> 
+              <div class="shadow card bg-dark">
+                  <div class="card-header">
+                    <H4 id="countryName"></H4>
+                  </div>
+                  <div class="card-body" id="countryAbstr">  
+                    <p></p>
+                  </div>
+            </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div id="desc">
+  </div>
+
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDrj_XFiUu5B26Oma-H55eemr33yFTrYlI&callback=initEqMap&libraries=places">
+  </script>
+  
+  <script async defer
+    src="https://apis.google.com/js/api.js"
+    onload="this.onload=function(){};"
+    onreadystatechange="if (this.readyState === 'complete') this.onload()">
+  </script>
+
+  <script src="./earthquakeMap.js"></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
